@@ -1,0 +1,9 @@
+<h1><%= @markets %> Results</h1>
+<% @markets.each do |market| %>
+  <ul class="market">
+    <li class="name"><%= market.name %></li>
+    <li class="city"><%= market.city %></li>
+    <li class="state"><%= market.state %></li>
+    <li><%= button_to "Info for this Market", market_path(market.market_id), method: :get %></li>
+  </ul>
+<% end %>
