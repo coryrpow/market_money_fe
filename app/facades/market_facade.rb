@@ -1,9 +1,9 @@
 class MarketFacade
-  # attr_reader :market
+  attr_reader :market
 
-  # def initialize
-  #   @market = market
-  # end
+  def initialize(id)
+    @market = market(id)
+  end
 
   def markets
     json = service.get_markets
@@ -11,6 +11,12 @@ class MarketFacade
     json[:data].map do |market_data|
       Market.new(market_data)
     end
+  end
+
+  def market(id)
+    json = service.get_market_details(@market)
+
+    Market.new(json[:data])
   end
 
 
