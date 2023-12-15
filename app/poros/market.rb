@@ -10,6 +10,7 @@ class Market
               :lon
 
   def initialize(attributes)
+    # require 'pry';binding.pry
     @market_id = attributes[:id]
     @name = attributes[:attributes][:name]
     @street = attributes[:attributes][:street]
@@ -19,6 +20,7 @@ class Market
     @zip = attributes[:attributes][:zip]
     @lat = attributes[:attributes][:lat]
     @lon = attributes[:attributes][:lon]
+    # @vendor_id = attributes[:relationships][:vendors][:data][0][:id]
   end
 
   # def format_address
